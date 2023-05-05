@@ -23,7 +23,7 @@ const subjectSchema = new mongoose.Schema({
       required: true,
       validate: {
         validator: function(v) {
-          return this.studentRole(v, 'student');
+          return this.parent().studentRole(v, 'student');
         },
         message: 'Student is not a valid student user.'
       }
@@ -42,8 +42,8 @@ subjectSchema.methods.teacherRole = async function(userId, role) {
     const user = await mongoose.model('User').findById(userId);
     return user && user.role === role;
   };
-  subjectSchema.methods.studentRole = async function(userId, role) {
+subjectSchema.methods.studentRole = async function(userId, role) {
     const user = await mongoose.model('User').findById(userId);
     return user && user.role === role;
-  };
+};
 module.exports = mongoose.model('Subject', subjectSchema);

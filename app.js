@@ -18,7 +18,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', usersRoutes);
 app.use('/api/subjects', subjectsRoutes);
 // app.use('/api/marks', marksRoutes);
-// app.use('/api/reclamations', reclamationsRoutes);
+app.use('/api/reclamations', reclamationsRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

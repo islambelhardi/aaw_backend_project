@@ -24,6 +24,7 @@ const createSubject = async (req, res) => {
 
 // Get a subject by ID
 const getSubjectById = async (req, res) => {
+  console.log(req.params.id);
   try {
     const subject = await Subject.findById(req.params.id);
 
@@ -40,6 +41,7 @@ const getSubjectById = async (req, res) => {
 // Update a subject by ID
 const updateSubjectById = async (req, res) => {
   const updates = Object.keys(req.body);
+  console.log(updates);
   const allowedUpdates = ['name', 'description', 'teacher'];
   const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
 
