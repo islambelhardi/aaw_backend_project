@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "644f9b7b59ad234e286f0639"
+  },
+  "firstName": "mouhamed",
+  "lastName": "ali",
+  "email": "mouhamed@gmail.com",
+  "password": "$2b$10$Ob8QMmD1q0O/rl//22GYI.tgK0Y1AasKNhLRutZrSc38NUgHXOQKW",
+  "role": "teacher",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644f9dee9131770186d48f83"
+  },
+  "firstName": "teacher1",
+  "lastName": "teacher",
+  "email": "teacher1@gmail.com",
+  "password": "$2b$10$dALJ4qvSA8HwHfqMBRcHxuG7.prZ77CaR5KNetXDBeKbyLtZfBgCi",
+  "role": "teacher",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644fca8b793065087a63b867"
+  },
+  "firstName": "student1",
+  "lastName": "student",
+  "email": "student1@gmail.com",
+  "password": "$2b$10$O./QEQXKa9RJsv52JCshF.jjyzE5GZ3a5Vw0bVQcTWy6pTskEGjgq",
+  "role": "student",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6469201d0f4eda2901663cec"
+  },
+  "firstName": "student2",
+  "lastName": "student 2",
+  "email": "student2@gmail.com",
+  "password": "$2b$10$qfpBV0SeCDShcM70UZSjs.X/O1c8uTIdu9j0msx4bxMXxP5lkJfL6",
+  "role": "student",
+  "__v": 0
+}]

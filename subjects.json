@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "644fce915e3bf1be48034ea2"
+  },
+  "name": "aaw",
+  "teacher": {
+    "$oid": "644f9dee9131770186d48f83"
+  },
+  "students": [
+    {
+      "student": {
+        "$oid": "644fca8b793065087a63b867"
+      },
+      "marks": 12,
+      "reclamation": null,
+      "_id": {
+        "$oid": "644fce915e3bf1be48034ea3"
+      }
+    },
+    {
+      "student": {
+        "$oid": "6469201d0f4eda2901663cec"
+      },
+      "marks": 10
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6451393859c1c723631d34ac"
+  },
+  "name": "Mssc",
+  "teacher": {
+    "$oid": "644f9dee9131770186d48f83"
+  },
+  "students": [
+    {
+      "student": {
+        "$oid": "644fca8b793065087a63b867"
+      },
+      "marks": 20,
+      "reclamation": null,
+      "_id": {
+        "$oid": "6451393859c1c723631d34ad"
+      }
+    },
+    {
+      "student": {
+        "$oid": "6469201d0f4eda2901663cec"
+      },
+      "marks": 2
+    }
+  ],
+  "__v": 0
+}]

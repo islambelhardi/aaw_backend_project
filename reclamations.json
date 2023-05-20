@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "64552440d0481eeee2f9270b"
+  },
+  "student": {
+    "$oid": "644f9dee9131770186d48f83"
+  },
+  "subject": {
+    "$oid": "6451393859c1c723631d34ac"
+  },
+  "message": "reclamation chi5",
+  "status": "resolved",
+  "createdAt": {
+    "$date": "2023-05-05T15:44:00.737Z"
+  },
+  "__v": 0
+}]
