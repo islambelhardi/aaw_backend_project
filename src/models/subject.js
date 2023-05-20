@@ -32,10 +32,10 @@ const subjectSchema = new mongoose.Schema({
       type: Number,
       default: null
     },
-    reclamation: {
-      type: String,
-      default: null
-    }
+    // reclamation: {
+    //   type: String,
+    //   default: null
+    // }
   }]
 });
 subjectSchema.methods.teacherRole = async function(userId, role) {
@@ -45,5 +45,8 @@ subjectSchema.methods.teacherRole = async function(userId, role) {
 subjectSchema.methods.studentRole = async function(userId, role) {
     const user = await mongoose.model('User').findById(userId);
     return user && user.role === role;
+};
+subjectSchema.methods.findStudentById = function(studentId) {
+  return this.students.find(student => student.student.toString() === studentId.toString());
 };
 module.exports = mongoose.model('Subject', subjectSchema);
