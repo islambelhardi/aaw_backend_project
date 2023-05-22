@@ -1,15 +1,10 @@
 const Reclamation = require('../models/reclamation');
 const Subject = require('../models/subject');
 
-
 const createReclamation = async (req, res) => {
-  // const userId = await req.user.Id;
-  // console.log('userid '+ req.user.id);
   try {
-    const subject = await Subject.findById(req.params.subjectId);
-    console.log('subject ' + subject._id);
-    console.log('user ' + req.user._id);
-    console.log('message ' + req.body.message);
+    const subject = await Subject.findOne({ name: req.body.subject });
+
     if (!subject) {
       return res.status(404).send({ error: 'Subject not found.' });
     }
