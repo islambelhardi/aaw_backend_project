@@ -1,6 +1,7 @@
 const Subject = require('../models/subject');
 const User = require('../models/user');
 const mongoose = require('mongoose');
+const { param } = require('../routes/subjects');
 // Get all subjects
 const getAllSubjects = async (req, res) => {
   try {
@@ -25,7 +26,7 @@ const createSubject = async (req, res) => {
 
 // Get a subject by ID
 const getSubjectById = async (req, res) => {
-  console.log(req.params.id);
+  console.log("req.params.id");
   try {
     const subject = await Subject.findById(req.params.id);
 
@@ -144,7 +145,7 @@ async function getMarksForStudent(req, res) {
 async function getAllStudentsBySubject(req, res) {
   try {
     const students = await User.find({ role: 'student' }); // Assuming 'User' model represents the users in your system
-    
+
     const studentData = [];
 
     for (const student of students) {
@@ -167,7 +168,7 @@ async function getAllStudentsBySubject(req, res) {
       ]);
 
       studentData.push({
-        student: student.firstName+' '+student.lastName,
+        student: student.firstName + ' ' + student.lastName,
         marks
       });
     }
@@ -178,4 +179,23 @@ async function getAllStudentsBySubject(req, res) {
     res.status(500).json({ error: 'An error occurred while retrieving student data.' });
   }
 }
-module.exports = { getAllSubjects, createSubject, getAllStudentsBySubject, getSubjectById, getMarksForStudent, updateSubjectById, deleteSubjectById, updateStudentMarks };
+const getSubjectsByTeacher= async(req, res)=> {
+  try {
+    const teacherId = req.params.teacherId;
+    console.log(teacherId);
+    const user = await User.findById(teacherId);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    const subjects = await Subject.find({ teacher: teacherId })
+      .populate('teacher')
+      .exec();
+
+    res.json(subjects);
+  } catch (error) {
+    // Handle error
+    console.error(err);
+    res.status(500).json({ error: 'An error occurred while retrieving teacher data.' });
+  }
+}
+module.exports = { getAllSubjects, createSubject, getAllStudentsBySubject, getSubjectById, getMarksForStudent, updateSubjectById, deleteSubjectById, updateStudentMarks,getSubjectsByTeacher };
